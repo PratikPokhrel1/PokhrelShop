@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Parteek Pokhrel Accociated with Anmol Randhawa">
+    <meta name="description" content="Fashon Website for the Last Semester Project">
+    <title>POKHREL/Home</title>
+    <link rel="icon" type="image/x-icon" href="project1imgs/icons/shopping-bag.png">
+    <link rel="stylesheet" href="01-project1.Css">
+    <link rel="stylesheet" href="02-project1.css">
+
+
+    <style>
+       
+
+        /* <!-- // custome content grid width design //  --> */
+        .Custome-width-content {
+            display: grid;
+            grid-template-columns: [full] 2rem [breakout-start] 1rem [content-start] 1fr [content-end] 2rem[breakout-end] 2rem[full];
+        }
+
+        .Custome-width-content * {
+            grid-column: content;
+        }
+
+        /* <!-- // custome content grid width design ends //  --> */
+
+
+        @media (width>540px) {
+
+            /* <!-- // custome breakoutwidth design //  --> */
+            .Custome-width-content {
+                display: grid;
+                grid-template-columns: [full] 1fr [breakout-start] 5rem [content-start] 25rem [content-end] 5rem[breakout-end] 1fr[full];
+            }
+
+            .Custome-width-content * {
+                grid-column: content;
+            }
+
+            /* <!-- // custome breakout width design ends //  --> */
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+       
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+    <header>
+        <div class="navWrapper">
+            <img src="project1imgs/authorPic.jpg" alt="">
+
+            <ul class="navlinks">
+                <li class="navLinks--items"><a href="#HOME-PAGE">POKHREL</a></li>
+                <li class="navLinks--items js-menubtn"> ||| Menu
+                    <div visiblility="false" class="navLinks--items--Menu">
+                        <ul>
+                           
+                            <li class="manuItems"><a href="collections.html">
+
+                                    <span>Collections</span></a></li>
+
+                            <li class="manuItems"><a href="clothes.html">
+
+                                    <span>Clothes</span></a></li>
+
+                            <li class="manuItems"><a href="Shoes&Watches.html">
+
+                                    <span>Shoes & Watches</span></a></li>
+
+
+                            <li class="manuItems menu-MetaOption"><a href="extra.html">
+
+                                    <span>Your Orders</span>
+                                </a></li>
+
+
+                            <li class="manuItems menu-MetaOption"><a href="about.html">
+
+                                    <span>About Us</span>
+                                </a></li>
+
+
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+
+
+
+        </div>
+    </header>
+
+
+    <main>
+        <section class="homePage-Section" id="HOME-PAGE"></section>
+        <!-- notify bar  -->
+        <div class=" hompageItem notifybar">
+
+            *Diwali Offers starting soon
+
+        </div>
+
+            <!-- images homepage  -->
+              <div class="hompageItem ImagesGrid">
+
+            <!-- <div class="images-gridItem">
+                <img src="project1imgs/watch1.png" alt="">
+                <div class="prodcutInfo">
+                    <p>Watch</p>
+                    <button>EXPLORE MEN`S COLLECTION</button>
+                </div>
+            </div> -->
+
+        </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        
+            <div class="footerLogo"><h2>POKHREL</h2></div>
+            <div class="footerContent">
+
+                <ul class="footerLists">
+                    <li class="footersList-items1"><a href="#HOME-PAGE">Home</a></li>
+                    <li class="footersList-items1">About</li>
+                    <li class="footersList-items1">Services</li>
+                </ul>
+                <ul class="footerLists">
+                    <li class="footerList-items2 ContactList"> <span class="footerHeading">Contacts:</span>
+                       <span>Ph:99999999</span>
+                       <span>E-mail : pokhrelphratik306@gmail.com</span>
+                    </li>
+                    <li class="footerList-items2"><span class="footerHeading">Links:</span>
+                        <span><a href="www.google.com">Google</a></span>
+                        
+                    </li>
+                </ul>
+
+            </div>
+
+        
+    </footer>
+
+</body>
+<script>
+
+    const imageGrid = document.querySelector('.ImagesGrid');
+    const menuBtn = document.querySelector('.js-menubtn');
+    let menuElement = document.querySelector('.navLinks--items--Menu');
+    let menuVisibility = menuElement.getAttribute('visiblility');
+
+    //  for header only
+    menuBtn.addEventListener('click', () => {
+
+        if (menuVisibility === 'false') {
+            console.log('seeting ture');
+            menuVisibility = "true";
+            menuElement.setAttribute('visibility', menuVisibility);
+        } else {
+            console.log('seeting false');
+            menuVisibility = "false";
+            menuElement.setAttribute('visibility', menuVisibility);
+        }
+
+    })
+
+
+    // home page images //
+
+    const imagesOnHome = [
+        {
+            image: 'project1imgs/pexels-ana-vieira-1110685065-26542634.jpg',
+            title: 'Shoes',
+            button: 'EXPLORE MEN`S COLLECTION'
+        },
+        {
+            image: 'project1imgs/pexels-koolshooters-6975803.jpg',
+            title: 'sweater',
+            button: 'EXPLORE MEN`S COLLECTION'
+        },
+        {
+            image: 'project1imgs/pexels-koolshooters-6975999.jpg',
+            title: 'Jacket',
+            button: 'EXPLORE MEN`S COLLECTION'
+        },
+        {
+            image: 'project1imgs/watch1.png',
+            title: 'Watch',
+            button: 'EXPLORE MEN`S COLLECTION'
+        }
+    ];
+
+
+    // for homepage images
+    let htmlGenerator = '';
+
+    imagesOnHome.forEach((img) => {
+
+        htmlGenerator += ` <div class="images-gridItem" style=" --bgImg: url(${img.image});">
+                
+                <div class="prodcutInfo">
+                <p>${img.title}</p>
+                <button class="exlporeBtn">${img.button}</button>
+            </div>
+          
+        </div>`;
+
+        imageGrid.innerHTML = htmlGenerator;
+
+    });
+
+    //redirect funtion
+
+     function redirectToCollection(){
+         
+        window.location.href = 'collections.html';
+     }
+   const Buttons = document.querySelectorAll('.exlporeBtn');
+
+   Buttons.forEach((button)=>{
+    button.addEventListener('click',redirectToCollection)
+   })
+
+
+</script>
+
+</html>

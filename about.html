@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKHREL/home/About US</title>
+    <link rel="icon" type="image/x-icon" href="project1imgs/icons/shopping-bag.png">
+    <link rel="stylesheet" href="01-project1.Css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        .pageWrapper{
+            padding-top: 5rem;
+            min-height: 100svh;
+          background-color: rgb(233, 233, 233);
+          display: flex;
+          flex-direction: column;
+
+        }
+        .pageItems{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: calc(100svh/ 2);
+            padding: 1rem;
+            gap: 0 1rem;
+            text-align: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .pageItems p{
+            font-size: clamp(0.7rem,3.2vw , 1rem);
+        }
+        .pageItems p span{
+            font-weight: 600;
+            font-size: 2em;
+        }
+
+        .pageItems img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (width> 520px){
+            .pageItems p{
+                line-height: 2rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="navWrapper">
+            <img src="project1imgs/authorPic.jpg" alt="">
+
+            <ul class="navlinks">
+                <li class="navLinks--items"><a href="index.html">POKHREL</a></li>
+                <li class="navLinks--items js-menubtn"> ||| Menu
+                    <div visiblility="false" class="navLinks--items--Menu">
+                        <ul>
+                           
+                            <li class="manuItems"><a href="index.html">
+
+                                    <span>Home</span></a></li>
+                           
+                            <li class="manuItems"><a href="collections.html">
+
+                                    <span>Collections</span></a></li>
+
+                            <li class="manuItems"><a href="clothes.html">
+
+                                    <span>Clothes</span></a></li>
+
+                            <li class="manuItems"><a href="Shoes&Watches.html">
+
+                                    <span>Shoes & Watches</span></a></li>
+
+                            <li class="manuItems menu-MetaOption"><a href="extra.html">
+
+                                    <span>Your Orders</span>
+                                </a></li>
+
+
+                            <li class="manuItems menu-MetaOption"><a href="about.html">
+
+                                    <span>About Us</span>
+                                </a></li>
+
+
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+
+
+
+        </div>
+
+    </header>
+
+    <main>
+    <div class="pageWrapper">
+        <div class="pageItems"><p class="infoPraras">This <span> website </span> is a final year project for my Bachelor of Computer Applications (BCA) course. 
+            Please note that this is not a real commercial website, but rather a demonstration of my skills and learning throughout the course.</p>
+            <img src="project1imgs/concept-computer-programming-developing-software-600nw-2149658841.webp" alt=""></div>
+        <div class="pageItems"><p class="infoPraras">The <span>Concept</span> of this website revolves around men's fashion, offering a curated selection of items such as watches, shoes, shirts, jackets, and pants. The focus is on quality over quantity, 
+            providing a limited but stylish range of products for the modern man.</p>
+            
+            <img src="project1imgs/2257ccd3f7ca68eb23bf2efc62b87e40.jpg" alt=""></div>
+        <div class="pageItems"><p class="infoPraras">About the <span>Author</span>: This project is created by Parteek POKHREL, a student currently pursuing a Bachelor of Computer Applications (BCA) at Lovely professional university . This project showcases my interest and skills in web development,
+             particularly in creating user-friendly and visually appealing online experiences.</p>
+            
+            <img src="project1imgs/authorPic.jpg" alt=""></div>
+
+
+
+    </div>
+</main>
+<script src="header.js"></script>
+</body>
+</html>
